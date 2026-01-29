@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 11:17:57 by asmati            #+#    #+#             */
-/*   Updated: 2026/01/29 13:46:15 by asmati           ###   ########.fr       */
+/*   Updated: 2026/01/29 18:47:10 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ Contact::Contact() {
 
 //destructeur
 Contact::~Contact(){
-
-	
 };
 
 //Setters

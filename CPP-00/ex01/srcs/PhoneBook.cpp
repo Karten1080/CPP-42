@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 11:57:48 by asmati            #+#    #+#             */
-/*   Updated: 2026/01/29 13:47:13 by asmati           ###   ########.fr       */
+/*   Updated: 2026/01/29 19:45:41 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,38 +31,70 @@ PhoneBook::PhoneBook() {
 PhoneBook::~PhoneBook() {
 }
 
-// Aucun champ me peut etre vide a prevoir une secur /
 void	PhoneBook::addContact(){
 	std::string input;
 	int i = this->_index % 8;
 
 	std::cout << "Entrer First Name: ";
-	std::getline(std::cin,input);
+	if (!std::getline(std::cin, input))
+		return;
+	while (input.empty()) {
+		std::cout << "First name cannot be empty. Try again: ";
+		if (!std::getline(std::cin, input))
+			return;
+	}
 	this->_contact[i].setFirstName(input);
 	
 	std::cout << "Entrer Last Name: ";
-	std::getline(std::cin,input);
+	if (!std::getline(std::cin, input))
+		return;
+	while (input.empty()) {
+		std::cout << "Last name cannot be empty. Try again: ";
+		if (!std::getline(std::cin, input))
+			return;
+	}
 	this->_contact[i].setLastName(input);
 
 	std::cout << "Entrer Nick name: ";
-	std::getline(std::cin,input);
+	if (!std::getline(std::cin, input))
+		return;
+	while (input.empty()) {
+		std::cout << "Nickname cannot be empty. Try again: ";
+		if (!std::getline(std::cin, input))
+			return;
+	}
 	this->_contact[i].setNickName(input);
 	
 	std::cout << "Entrer Phone number: ";
-	std::getline(std::cin,input);
+	if (!std::getline(std::cin, input))
+		return;
+	while (input.empty()) {
+		std::cout << "Phone number cannot be empty. Try again: ";
+		if (!std::getline(std::cin, input))
+			return;
+	}
 	this->_contact[i].setPhoneNumber(input);
 
 	std::cout << "Entrer darkest secret: ";
-	std::getline(std::cin,input);
+	if (!std::getline(std::cin, input))
+		return;
+	while (input.empty()) {
+		std::cout << "Darkest secret cannot be empty. Try again: ";
+		if (!std::getline(std::cin, input))
+			return;
+	}
 	this->_contact[i].setDarkestsecret(input);
 	
 	this->_index++;
+	std::cout << "Contact added successfully!" << std::endl;
 }
 
 void	PhoneBook::searchContact(){
 	int i = 0;
 	int totalcontact = (this->_index < 8) ? this->_index : 8; 
-	
+	if(totalcontact == 0){
+		return ;
+	}
 	std::cout << "     Index|First Name| Last Name|  Nickname " << std::endl;
 	for(i = 0; i < totalcontact; i++){
 		std::cout << std::setw(10) << i << "|";
@@ -81,10 +113,10 @@ void	PhoneBook::searchContact(){
 		return;
 	}	
 	std::cin.ignore(10000,'\n');
-	std::cout << "Fisrt Name: " << this->_contact[index].getFirstName() << std::endl;
-	std::cout << "Fisrt Name: " << this->_contact[index].getLastName() << std::endl;
-	std::cout << "Fisrt Name: " << this->_contact[index].getNickName() << std::endl;
-	std::cout << "Fisrt Name: " << this->_contact[index].getPhoneNumber() << std::endl;
-	std::cout << "Fisrt Name: " << this->_contact[index].getDarkestsecret() << std::endl;
+	std::cout << "First Name: " << this->_contact[index].getFirstName() << std::endl;
+	std::cout << "Last Name: " << this->_contact[index].getLastName() << std::endl;
+	std::cout << "Nickname: " << this->_contact[index].getNickName() << std::endl;
+	std::cout << "Phone Number: " << this->_contact[index].getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << this->_contact[index].getDarkestsecret() << std::endl;
 
 }
