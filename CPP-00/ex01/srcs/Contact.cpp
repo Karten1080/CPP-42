@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 11:17:57 by asmati            #+#    #+#             */
-/*   Updated: 2026/01/29 11:44:24 by asmati           ###   ########.fr       */
+/*   Updated: 2026/01/29 13:46:15 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void  Contact::setPhoneNumber(std::string str){
 	this->_phoneNumber = str;
 }
 
-void  Contact::setdarkestsecret(std::string str){
+void  Contact::setDarkestsecret(std::string str){
 	this->_darkestsecret = str;
 }
 
@@ -65,7 +65,7 @@ std::string Contact::getPhoneNumber() const {
     return (this->_phoneNumber);
 }
 
-std::string Contact::getdarkestsecret() const {
+std::string Contact::getDarkestsecret() const {
     return (this->_darkestsecret);
 }
 

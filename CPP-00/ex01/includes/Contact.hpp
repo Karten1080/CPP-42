@@ -6,14 +6,14 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 11:36:28 by asmati            #+#    #+#             */
-/*   Updated: 2026/01/29 13:38:47 by asmati           ###   ########.fr       */
+/*   Updated: 2026/01/29 13:46:16 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include "All.hpp"
+# include <string>
 
 class Contact {
 private:

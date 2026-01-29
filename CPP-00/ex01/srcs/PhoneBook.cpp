@@ -6,11 +6,13 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 11:57:48 by asmati            #+#    #+#             */
-/*   Updated: 2026/01/29 13:38:52 by asmati           ###   ########.fr       */
+/*   Updated: 2026/01/29 13:47:13 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "All.hpp"
+#include "PhoneBook.hpp"
+#include <iostream>
+#include <iomanip>
 
 
 
@@ -24,7 +26,11 @@ std::string PhoneBook::truncate(std::string str)
 
 PhoneBook::PhoneBook() {
 	this->_index = 0;
-};
+}
+
+PhoneBook::~PhoneBook() {
+}
+
 // Aucun champ me peut etre vide a prevoir une secur /
 void	PhoneBook::addContact(){
 	std::string input;

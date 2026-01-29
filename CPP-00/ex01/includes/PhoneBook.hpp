@@ -6,14 +6,15 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 11:58:59 by asmati            #+#    #+#             */
-/*   Updated: 2026/01/29 12:22:58 by asmati           ###   ########.fr       */
+/*   Updated: 2026/01/29 13:46:14 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include "All.hpp"
+# include <string>
+# include "Contact.hpp"
 
 class PhoneBook {
 
