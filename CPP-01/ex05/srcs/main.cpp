@@ -6,15 +6,21 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 11:11:05 by asmati            #+#    #+#             */
-/*   Updated: 2026/02/12 12:19:32 by asmati           ###   ########.fr       */
+/*   Updated: 2026/02/18 10:45:15 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "../includes/Harl.hpp"
+
 int main(int ac,char **av)
 {
-	void *fonction_ptr(void);
-	
-
+	Harl harl;
+	if(ac == 2)
+	{
+		harl.complain(av[1]);
+	}
+	else
+		return (1);
 
 	
 
