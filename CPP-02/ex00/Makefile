@@ -6,7 +6,41 @@
 #    By: asmati <asmati@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 11:00:24 by asmati            #+#    #+#              #
-#    Updated: 2026/02/18 11:00:30 by asmati           ###   ########.fr        #
+#    Updated: 2026/02/19 10:59:31 by asmati           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+
+NAME        = Fixed
+
+CXX         = c++
+CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
+
+SRCS        = ./srcs/main.cpp \
+              ./srcs/Fixed.cpp
+
+# L'option -I doit être utilisée pendant la compilation des .o
+INCLUDES    = -I ./includes
+
+OBJS        = $(SRCS:.cpp=.o)
+
+all: $(NAME)
+
+# Commande de link final
+$(NAME): $(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+# Règle de compilation des fichiers objets
+# On ajoute $(INCLUDES) ici pour que le compilo trouve tes .hpp
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -c $< -o $@
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
