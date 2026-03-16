@@ -6,12 +6,13 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 11:57:48 by asmati            #+#    #+#             */
-/*   Updated: 2026/01/29 19:45:41 by asmati           ###   ########.fr       */
+/*   Updated: 2026/02/23 14:09:55 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <algorithm>
 #include <iomanip>
 
 
@@ -65,13 +66,33 @@ void	PhoneBook::addContact(){
 	}
 	this->_contact[i].setNickName(input);
 	
-	std::cout << "Entrer Phone number: ";
-	if (!std::getline(std::cin, input))
-		return;
-	while (input.empty()) {
-		std::cout << "Phone number cannot be empty. Try again: ";
-		if (!std::getline(std::cin, input))
+	// std::cout << "Enter Phone number: ";
+	// if (!std::getline(std::cin, input))
+	// 	return;
+	// while (input.empty()) {
+	// 	std::cout << "Phone number cannot be empty. Try again: ";
+	// 	if (!std::getline(std::cin, input))
+	// 		return;
+	// }
+
+	while(true)
+	{
+		std::cout << "Enter Phone Number: ";
+		
+		if(!std::getline(std::cin, input))
 			return;
+		if(input.find_first_not_of(" ") == std::string::npos){
+			std::cout << "Phone Number Cannot be empty.\n";
+			continue; 
+		}
+		bool valid = std::all_of(input.begin(),input.end(),[](unsigned char c)
+		{return std::isdigit(c) || c == '+' || c == ' ';});
+		
+		if (!valid) { 
+			std::cout << "Invalid phone number. Use digits only.\n";
+			continue;
+   		}
+		break;
 	}
 	this->_contact[i].setPhoneNumber(input);
 

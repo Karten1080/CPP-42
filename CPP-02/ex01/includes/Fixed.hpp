@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:00:18 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/14 15:15:01 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/16 14:56:28 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,15 @@ private:
 
 public:
 	Fixed();
-	Fixed(const Fixed &src);            // Constructeur de recopie
-	Fixed &operator=(const Fixed &src); // Opérateur d'affectation
-	Fixed(const int n);
-	int toInt( void ) const;
-	Fixed(const float n);
-	float toFloat( void ) const;
 	~Fixed();
-	int getRawBits( void ) const;
-	void setRawBits( int const raw );
+	Fixed(const int n);
+	Fixed(const float n);
+	
+	float toFloat( void ) const;
+	int toInt( void ) const;
 
 };
+
+std::ostream & operator<<(std::ostream & os, Fixed const & fixed);
 
 #endif
