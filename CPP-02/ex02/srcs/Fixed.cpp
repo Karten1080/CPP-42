@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:00:24 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/17 13:51:11 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/17 15:14:18 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,27 @@ Fixed & Fixed::operator=(const Fixed &src)
 		this->_value = src.getRawBits();
 	return *this;
 }
+
+Fixed & min(Fixed & a, Fixed & b)
+{
+	return (a < b ? a : b);
+}
+
+const Fixed & Fixed::min(const Fixed & a, const Fixed & b)
+{
+	return (a < b ? a : b);
+}
+
+Fixed & max(Fixed & a, Fixed & b)
+{
+	return (a > b ? a : b);	
+}
+
+const Fixed & Fixed::max(const Fixed & a, const Fixed & b)
+{
+	return (a > b ? a : b);	
+}
+
 
 Fixed::~Fixed()
 {
