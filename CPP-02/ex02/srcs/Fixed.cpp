@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:00:24 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/16 17:18:47 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/17 13:51:11 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,32 +35,6 @@ Fixed::Fixed(const float n)
 	this->_value = roundf(n * (1 << _bits));
 }
 
-Fixed::~Fixed()
-{
-	std::cout << "Destructor called" << std::endl;
-};
-
-int Fixed::getRawBits(void) const
-{
-	std::cout << "getRawBits member function called" << std::endl;
-	return (this->_value);
-}
-
-void Fixed::setRawBits( int const raw )
-{
-	this->_value = raw;
-}
-
-float Fixed::toFloat(void) const
-{
-	return ((float)_value / (1 << _bits));
-}	
-
-int Fixed::toInt(void) const
-{
-	return (this->_value >> _bits);
-}
-
 Fixed Fixed::operator*(Fixed const & rhs) const{
 	Fixed res;
 	long long tmp =((long long)this->_value * rhs.getRawBits() >> _bits);
@@ -73,7 +47,7 @@ Fixed Fixed::operator*(Fixed const & rhs) const{
 Fixed Fixed::operator/(Fixed const & rhs) const{
 	Fixed res;
 	if(rhs.getRawBits() == 0)
-		std::cerr << "Error: Division by zero" << std::endl;
+		return (std::cerr << "Error: Division by zero" << std::endl,Fixed(0));
 	long long tmp = (((long long)this->_value << _bits) / rhs.getRawBits());	
 	if(Overflow(tmp))
 		return (std::cerr << "Error: Fixed division overflow" << std::endl,Fixed(0));
@@ -98,6 +72,90 @@ Fixed & Fixed::operator=(const Fixed &src)
 		this->_value = src.getRawBits();
 	return *this;
 }
+
+Fixed::~Fixed()
+{
+	std::cout << "Destructor called" << std::endl;
+};
+
+int Fixed::toInt(void) const
+{
+	return (this->_value >> _bits);
+}
+
+int Fixed::getRawBits(void) const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (this->_value);
+}
+
+void Fixed::setRawBits( int const raw )
+{
+	this->_value = raw;
+}
+
+float Fixed::toFloat(void) const
+{
+	return ((float)_value / (1 << _bits));
+}	
+
+
+bool Fixed::operator==(const Fixed & rhs) const
+{	
+	return(this->getRawBits() == rhs.getRawBits());
+}
+
+bool Fixed::operator<=(const Fixed & rhs) const
+{
+		return(this->getRawBits() <= rhs.getRawBits());
+
+}
+
+bool Fixed::operator>=(const Fixed & rhs) const
+{
+		return(this->getRawBits() >= rhs.getRawBits());	
+}
+
+bool Fixed::operator<(const Fixed & rhs) const
+{
+		return(this->getRawBits() < rhs.getRawBits());
+}
+
+bool Fixed::operator>(const Fixed & rhs) const
+{
+		return(this->getRawBits() > rhs.getRawBits());		
+}
+
+bool Fixed::operator!=(const Fixed & rhs) const
+{
+			return(this->getRawBits() != rhs.getRawBits());
+}
+
+Fixed & Fixed::operator++(void)
+{
+	this->_value++;
+	return *this;
+}
+Fixed & Fixed::operator--(void)
+{
+	this->_value--;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed copy(*this);
+	_value++;
+	return (copy);	
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed copy(*this);
+	_value--;
+	return (copy);	
+}
+
 
 bool	Fixed::Overflow(long long n) const
 {
