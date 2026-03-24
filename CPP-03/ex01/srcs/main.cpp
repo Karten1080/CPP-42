@@ -6,19 +6,34 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:00:24 by asmati            #+#    #+#             */
-/*   Updated: 2026/02/19 11:56:50 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/24 14:05:19 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Fixed.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-int main( void ) {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	
+int main() {
+    std::cout << "=== CRÉATION ===" << std::endl;
+    ClapTrap robotB("C3PO");
+    ClapTrap* polyPtr = new ScavTrap("R2D2");
+
+    std::cout << "\n=== FIGHT ===" << std::endl;
+    polyPtr->attack("C3PO");
+    robotB.attack("PolyPtr");
+
+    std::cout << "\n=== HEAL ===" << std::endl;
+    robotB.beRepaired(10);
+    polyPtr->beRepaired(15);
+    
+    std::cout << "\n=== TEST STAMINA ===" << std::endl;
+    for (int i = 0; i < 10; i++) {
+        polyPtr->attack("un mur");
+        robotB.attack("C3PO");
+    }   
+
+    std::cout << "\n=== DESTRUCTIONS ===" << std::endl;\
+    delete polyPtr;
+    return 0; 
 }
+

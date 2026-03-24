@@ -6,11 +6,11 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:00:24 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/17 15:04:30 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/17 15:23:30 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Fixed.hpp"
+#include "Fixed.hpp"
 
 
 #include <iostream>

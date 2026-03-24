@@ -6,18 +6,18 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:00:18 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/21 22:14:05 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/24 13:44:50 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef ClapTrap_HPP
+# define ClapTrap_HPP
 
 # include <iostream>
 
 
 class ClapTrap {
-private:
+protected:
 	std::string _Name;
 	int Hit_points;
 	int Energy_points;
@@ -26,10 +26,10 @@ private:
 public:
 	
 	ClapTrap(const std::string& name);
-    ~ClapTrap();
+    virtual ~ClapTrap();
 
 
-	void attack(const std::string& target);
+	virtual void attack(const std::string& target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 	

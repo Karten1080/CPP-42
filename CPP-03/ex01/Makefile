@@ -6,20 +6,21 @@
 #    By: asmati <asmati@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/18 11:00:24 by asmati            #+#    #+#              #
-#    Updated: 2026/03/16 15:43:37 by asmati           ###   ########.fr        #
+#    Updated: 2026/03/24 13:22:05 by asmati           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME        = Fixed
+NAME        = ScavTrap
 
 CXX         = c++
-CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS    = -Wall -Wextra -Werror -g -std=c++98
 
 SRCS        = ./srcs/main.cpp \
-              ./srcs/Fixed.cpp
+              ./srcs/ClapTrap.cpp \
+			  ./srcs/ScavTrap.cpp
 
-INCLUDES    = -I ./includes
+INCLUDES    = -I./includes
 
 OBJS        = $(SRCS:.cpp=.o)
 

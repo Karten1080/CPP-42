@@ -6,13 +6,16 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:00:24 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/17 15:16:01 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/17 15:23:22 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Fixed.hpp"
+#include "Fixed.hpp"
 
 Fixed::Fixed() : 	_value(0)
+{};
+
+Fixed::~Fixed()
 {};
 
 Fixed::Fixed(const Fixed &src)
@@ -66,12 +69,33 @@ Fixed & Fixed::operator=(const Fixed &src)
 	return *this;
 }
 
-Fixed & min(Fixed & a, Fixed & b)
+Fixed & Fixed::operator++(void)
 {
-	return (a < b ? a : b);
+	this->_value++;
+	return *this;
 }
 
-const Fixed & Fixed::min(const Fixed & a, const Fixed & b)
+Fixed & Fixed::operator--(void)
+{
+	this->_value--;
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed copy(*this);
+	_value++;
+	return (copy);	
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed copy(*this);
+	_value--;
+	return (copy);	
+}
+
+Fixed & min(Fixed & a, Fixed & b)
 {
 	return (a < b ? a : b);
 }
@@ -81,14 +105,16 @@ Fixed & max(Fixed & a, Fixed & b)
 	return (a > b ? a : b);	
 }
 
+const Fixed & Fixed::min(const Fixed & a, const Fixed & b)
+{
+	return (a < b ? a : b);
+}
+
 const Fixed & Fixed::max(const Fixed & a, const Fixed & b)
 {
 	return (a > b ? a : b);	
 }
 
-
-Fixed::~Fixed()
-{};
 
 int Fixed::toInt(void) const
 {
@@ -141,32 +167,6 @@ bool Fixed::operator!=(const Fixed & rhs) const
 {
 			return(this->getRawBits() != rhs.getRawBits());
 }
-
-Fixed & Fixed::operator++(void)
-{
-	this->_value++;
-	return *this;
-}
-Fixed & Fixed::operator--(void)
-{
-	this->_value--;
-	return (*this);
-}
-
-Fixed Fixed::operator++(int)
-{
-	Fixed copy(*this);
-	_value++;
-	return (copy);	
-}
-
-Fixed Fixed::operator--(int)
-{
-	Fixed copy(*this);
-	_value--;
-	return (copy);	
-}
-
 
 bool	Fixed::Overflow(long long n) const
 {
