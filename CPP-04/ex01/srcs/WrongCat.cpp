@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 11:17:57 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/28 20:30:33 by asmati           ###   ########.fr       */
+/*   Created: 2026/03/21 21:46:16 by asmati            #+#    #+#             */
+/*   Updated: 2026/03/28 16:13:53 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Setter = DOnne une valeur
-//Getter = Demande la valeur
+#include "WrongCat.hpp"
+#include "WrongCat.hpp"
 
-#include "Zombie.hpp"
-
-//constructeur 
-
-Zombie* newZombie(std::string name){
-	Zombie* zombie = new Zombie(name);
-	return zombie;
+WrongCat::WrongCat() : WrongAnimal(){
+    type = "WrongCat";
+    std::cout << "WrongCat constructor called" << std::endl;
 }
+
+WrongCat::~WrongCat() {
+    std::cout << "WrongCat destructor called" << std::endl;
+}
+
+void WrongCat::makeSound() const {
+    std::cout << "MeoOOOow" << std::endl;
+}
+

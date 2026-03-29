@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 11:17:57 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/28 20:30:33 by asmati           ###   ########.fr       */
+/*   Created: 2026/02/18 11:00:18 by asmati            #+#    #+#             */
+/*   Updated: 2026/03/28 16:14:45 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Setter = DOnne une valeur
-//Getter = Demande la valeur
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include "Zombie.hpp"
+#include "WrongAnimal.hpp"
+# include <iostream>
 
-//constructeur 
+class WrongCat : public WrongAnimal {
+public:
+	WrongCat();
+	~WrongCat();
 
-Zombie* newZombie(std::string name){
-	Zombie* zombie = new Zombie(name);
-	return zombie;
-}
+	void makeSound() const;
+
+};
+
+#endif

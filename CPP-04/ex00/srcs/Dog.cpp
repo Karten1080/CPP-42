@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/24 11:17:57 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/28 20:30:33 by asmati           ###   ########.fr       */
+/*   Created: 2026/03/21 21:46:16 by asmati            #+#    #+#             */
+/*   Updated: 2026/03/28 16:21:15 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Setter = DOnne une valeur
-//Getter = Demande la valeur
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
-#include "Zombie.hpp"
-
-//constructeur 
-
-Zombie* newZombie(std::string name){
-	Zombie* zombie = new Zombie(name);
-	return zombie;
+Dog::Dog() :  Animal(){
+    this->type = "Dog";
+    std::cout << "Dog constructor called" << std::endl;
 }
+
+Dog::~Dog() {
+    std::cout << "Dog destructor called" << std::endl;
+}
+
+void Dog::makeSound() const {
+    std::cout << "Woof !" << std::endl;
+}
+
+

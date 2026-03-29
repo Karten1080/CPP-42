@@ -5,22 +5,27 @@
 #                                                     +:+ +:+         +:+      #
 #    By: asmati <asmati@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/01/24 10:57:40 by asmati            #+#    #+#              #
-#    Updated: 2026/03/28 20:30:33 by asmati           ###   ########.fr        #
+#    Created: 2026/02/18 11:00:24 by asmati            #+#    #+#              #
+#    Updated: 2026/03/28 15:49:19 by asmati           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
 
-CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+NAME        = Polymorphism
 
-SRCS = srcs/Zombie.cpp \
-		srcs/main.cpp \
-		srcs/newZombie.cpp \
-		srcs/randomChump.cpp
-INCLUDES = -I includes
-OBJS = $(SRCS:.cpp=.o)
+CXX         = c++
+CXXFLAGS    = -Wall -Wextra -Werror -std=c++98
+
+SRCS        = ./srcs/main.cpp \
+              ./srcs/Animal.cpp \
+              ./srcs/Cat.cpp \
+              ./srcs/Dog.cpp \
+			  ./srcs/WrongAnimal.cpp \
+			  ./srcs/WrongCat.cpp
+
+INCLUDES    = -I./includes
+
+OBJS        = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
