@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 21:46:16 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/28 21:27:19 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/29 17:05:55 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Cat::Cat() :  Animal() {
 
 Cat::~Cat() {
     std::cout << "Cat destructor called" << std::endl;
+    delete this->_brain;
 }
 
 void Cat::makeSound() const {

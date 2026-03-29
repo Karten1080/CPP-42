@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 21:46:16 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/28 21:27:23 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/29 16:57:10 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 #include "Dog.hpp"
 
 Dog::Dog() :  Animal(){
-    this->type = "Dog";
-    this->_brain = new Brain();
     std::cout << "Dog constructor called" << std::endl;
+    this->_brain = new Brain();
+    this->type = "Dog";
 }
 
 Dog::~Dog() {

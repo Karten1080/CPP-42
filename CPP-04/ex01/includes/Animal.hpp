@@ -23,6 +23,7 @@ protected:
 public:
 	
 	Animal();
+	Animal(const Animal &src);
     virtual ~Animal();
 	Animal &operator=(const Animal &src);
 	virtual void makeSound() const;

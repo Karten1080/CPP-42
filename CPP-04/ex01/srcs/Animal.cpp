@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 21:46:16 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/28 21:22:44 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/29 17:03:22 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,15 @@ std::string Animal::getType()  const{
     return type;
 }
 
+Animal::Animal(const Animal &src)
+{
+    std::cout << "Animal copy constructor called" << std::endl;
+    this->type = src.type;       
+}
+
 Animal &Animal::operator=(const Animal &src)
 {
     if(this != &src)
-    {
         this->type = src.type;
-    }
     return *this;
 }
