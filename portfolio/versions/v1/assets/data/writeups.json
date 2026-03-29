@@ -1,0 +1,38 @@
+[
+  {
+    "id": "sqli-auth-bypass",
+    "title": "SQL Injection — Auth Bypass",
+    "platform": "TryHackMe",
+    "category": "Web",
+    "difficulty": "Easy",
+    "date": "2025-03-15",
+    "summary": "Formulaire de login vulnérable à une injection SQL classique. Exploitation via ' OR 1=1 -- pour bypasser l'authentification et accéder au panel admin. Credentials extraits par UNION SELECT. Outil : Burp Suite pour intercepter et modifier la requête.",
+    "tools": ["Burp Suite", "SQLmap"],
+    "tags": ["SQLi", "Auth Bypass", "Web"],
+    "link": "#"
+  },
+  {
+    "id": "bof-ret2libc",
+    "title": "Buffer Overflow — Ret2Libc",
+    "platform": "Root-Me",
+    "category": "Pwn",
+    "difficulty": "Hard",
+    "date": "2025-04-02",
+    "summary": "Binaire ELF 32-bit sans ASLR, NX activé. Identification de l'offset via pattern cyclique avec GDB. Construction du payload ret2libc pour chaîner system() + /bin/sh depuis la libc. Shell obtenu, flag lu en root.",
+    "tools": ["GDB", "pwndbg", "Python"],
+    "tags": ["Buffer Overflow", "Ret2Libc", "Pwn"],
+    "link": "#"
+  },
+  {
+    "id": "http-traffic-analysis",
+    "title": "HTTP Traffic Analysis — Credential Sniffing",
+    "platform": "TryHackMe",
+    "category": "Réseau",
+    "difficulty": "Easy",
+    "date": "2025-05-10",
+    "summary": "Analyse d'un fichier pcap contenant des échanges HTTP non chiffrés sur un réseau interne. Extraction des credentials en clair via filtres Wireshark (http.request.method == POST). Démonstration de l'importance de HTTPS.",
+    "tools": ["Wireshark"],
+    "tags": ["Réseau", "Capture", "HTTP"],
+    "link": "#"
+  }
+]

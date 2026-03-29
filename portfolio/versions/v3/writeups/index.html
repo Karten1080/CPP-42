@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Write-ups CTF · Adel Smati</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+</head>
+<body>
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="nav" aria-label="Navigation">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="Retour">
+        <div class="nav-logo-mark" aria-hidden="true">AS</div>
+        <div>
+          <span class="nav-logo-text">ADEL SMATI</span>
+          <span class="nav-logo-sub">Pentest · SOC · Stage 2026</span>
+        </div>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html#profil">Profil</a></li>
+        <li><a href="../index.html#stack">Stack</a></li>
+        <li><a href="../index.html#projets">42</a></li>
+        <li><a href="../index.html#perso">Perso</a></li>
+        <li><a href="#writeups" class="active">CTF</a></li>
+        <li><a href="../index.html#certifications">Certs</a></li>
+        <li><a href="../index.html#veille">Veille</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="nav-overlay">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-label="Menu">
+    <a href="../index.html">Accueil</a>
+    <a href="../index.html#ctf">CTF</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+
+  <section id="writeups" style="padding-top:calc(var(--nav-h) + 60px);" aria-labelledby="wu-title">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Write-ups CTF</span>
+        <h1 class="section-title" id="wu-title" style="font-size:clamp(24px,4vw,36px);">Résolution de challenges offensifs</h1>
+        <p style="font-size:13px;color:var(--text-muted);margin-top:8px;font-family:var(--font-mono);">Web · Pwn · Réseau · Reverse</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filtrer par catégorie">
+        <button class="filter-btn active" data-cat="all">Tous</button>
+        <button class="filter-btn" data-cat="Web">Web</button>
+        <button class="filter-btn" data-cat="Pwn">Pwn</button>
+        <button class="filter-btn" data-cat="Réseau">Réseau</button>
+        <button class="filter-btn" data-cat="Reverse">Reverse</button>
+      </div>
+
+      <div class="grid-3">
+        <article class="card writeup-card" data-category="Web">
+          <p class="platform-tag">TryHackMe · Web</p>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+            <h2 class="card-title" style="font-size:13px;">SQL Injection — Auth Bypass</h2>
+            <span class="diff diff-easy">EASY</span>
+          </div>
+          <p style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-bottom:8px;">2025-03-15</p>
+          <p class="card-body" style="font-size:13px;"><code>' OR 1=1 --</code> pour bypasser l'auth. Credentials via UNION SELECT. Outil : Burp Suite.</p>
+          <div class="tags" style="margin-top:8px;"><span class="tag">SQLi</span><span class="tag">Auth Bypass</span></div>
+          <a href="#" class="writeup-link">→ Lire</a>
+        </article>
+
+        <article class="card writeup-card" data-category="Pwn">
+          <p class="platform-tag">Root-Me · Pwn</p>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+            <h2 class="card-title" style="font-size:13px;">Buffer Overflow — Ret2Libc</h2>
+            <span class="diff diff-hard">HARD</span>
+          </div>
+          <p style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-bottom:8px;">2025-04-02</p>
+          <p class="card-body" style="font-size:13px;">ELF 32-bit, no ASLR. Ret2libc → <code>system("/bin/sh")</code>. Shell.</p>
+          <div class="tags" style="margin-top:8px;"><span class="tag">Buffer Overflow</span><span class="tag">GDB</span></div>
+          <a href="#" class="writeup-link">→ Lire</a>
+        </article>
+
+        <article class="card writeup-card" data-category="Réseau">
+          <p class="platform-tag">TryHackMe · Réseau</p>
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+            <h2 class="card-title" style="font-size:13px;">HTTP Traffic — Credential Sniffing</h2>
+            <span class="diff diff-easy">EASY</span>
+          </div>
+          <p style="font-family:var(--font-mono);font-size:10px;color:var(--text-muted);margin-bottom:8px;">2025-05-10</p>
+          <p class="card-body" style="font-size:13px;">Analyse <code>.pcap</code>. Credentials en clair via Wireshark.</p>
+          <div class="tags" style="margin-top:8px;"><span class="tag">Réseau</span><span class="tag">Wireshark</span></div>
+          <a href="#" class="writeup-link">→ Lire</a>
+        </article>
+      </div>
+
+      <!-- WRITEUP_INSERT -->
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Adel Smati · 2026 · Fait avec du C, de la curiosité et quelques CVE</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

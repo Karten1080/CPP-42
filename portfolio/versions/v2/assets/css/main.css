@@ -1,0 +1,103 @@
+/* ============================================================
+   V2 — main.css · Amber / Minimal
+   ============================================================ */
+
+:root {
+  --bg:           #0a0a0a;
+  --bg-card:      #111111;
+  --bg-hover:     #161616;
+  --amber:        #f59e0b;
+  --amber-dim:    rgba(245, 158, 11, 0.15);
+  --amber-border: rgba(245, 158, 11, 0.25);
+  --amber-hover:  rgba(245, 158, 11, 0.5);
+  --white:        #fafafa;
+  --grey:         #a3a3a3;
+  --muted:        #404040;
+  --red:          #ef4444;
+  --green:        #34d399;
+
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Sora', sans-serif;
+
+  --max-width: 860px;
+  --nav-h: 60px;
+  --radius: 8px;
+  --gap: 20px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--grey);
+  font-family: var(--font-body);
+  line-height: 1.75;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Grid de fond sur le hero */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(245,158,11,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,158,11,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 60%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, transparent 60%);
+}
+
+/* Curseur */
+#cursor {
+  position: fixed;
+  width: 6px; height: 6px;
+  background: var(--amber);
+  border-radius: 50%;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%,-50%);
+  transition: width 150ms, height 150ms, background 150ms;
+}
+#cursor-ring {
+  position: fixed;
+  width: 28px; height: 28px;
+  border: 1px solid rgba(245,158,11,0.45);
+  border-radius: 50%;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%,-50%);
+}
+body.cursor-hover #cursor { width: 10px; height: 10px; background: var(--white); }
+body.cursor-hover #cursor-ring { width: 40px; height: 40px; border-color: rgba(245,158,11,0.3); }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 1024px) { .container { padding: 0 48px; } }
+
+section { padding: 96px 0; border-top: 1px solid #1a1a1a; position: relative; }
+section:first-of-type { border-top: none; }
+
+h1,h2,h3,h4 { font-family: var(--font-mono); font-weight: 700; line-height: 1.15; }
+p { line-height: 1.75; }
+a { color: inherit; text-decoration: none; }
+code {
+  font-family: var(--font-mono);
+  font-size: 0.82em;
+  color: var(--amber);
+  background: var(--amber-dim);
+  padding: 1px 6px;
+  border-radius: 3px;
+}

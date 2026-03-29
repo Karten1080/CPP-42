@@ -1,0 +1,36 @@
+name: Deploy Portfolio
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify structure
+        run: |
+          test -f index.html              || { echo "❌ index.html manquant"; exit 1; }
+          test -f assets/css/main.css     || { echo "❌ main.css manquant"; exit 1; }
+          test -f assets/css/components.css || { echo "❌ components.css manquant"; exit 1; }
+          test -f assets/css/animations.css || { echo "❌ animations.css manquant"; exit 1; }
+          test -f assets/js/main.js       || { echo "❌ main.js manquant"; exit 1; }
+          test -f assets/js/particles.js  || { echo "❌ particles.js manquant"; exit 1; }
+          test -f writeups/index.html     || { echo "❌ writeups/index.html manquant"; exit 1; }
+          echo "✅ Structure OK"
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          exclude_assets: '.github,CLAUDE.md,PROMPT_PORTFOLIO_ADEL(1).md,PROMPT_PORTFOLIO_V2.md'

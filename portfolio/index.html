@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Adel Smati — Étudiant École 42, stage Cybersécurité Pentest / SOC dès mai 2026, Paris." />
+  <title>Adel Smati · Pentest & SOC · Stage 2026</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/animations.css" />
+</head>
+<body>
+
+  <!-- Cursor -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Retour en haut">
+        [ AS_<span class="cursor-blink" aria-hidden="true"></span> ]
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#profil">Profil</a></li>
+        <li><a href="#stack">Stack</a></li>
+        <li><a href="#projets">42</a></li>
+        <li><a href="#perso">Perso</a></li>
+        <li><a href="#ctf">CTF</a></li>
+        <li><a href="#certifications">Certs</a></li>
+        <li><a href="#veille">Veille</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button
+        class="nav-hamburger"
+        id="nav-hamburger"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="nav-overlay"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-label="Menu de navigation">
+    <a href="#profil">Profil</a>
+    <a href="#stack">Stack</a>
+    <a href="#projets">Projets 42</a>
+    <a href="#perso">Projets Perso</a>
+    <a href="#ctf">CTF</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#veille">Veille</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" aria-labelledby="hero-name">
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+    <div class="container">
+      <div class="availability-badge" aria-label="Disponible pour un stage dès mai 2026">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        DISPONIBLE · STAGE MAI 2026
+      </div>
+
+      <h1
+        class="hero-h1"
+        id="hero-name"
+        data-text="ADEL SMATI"
+        aria-label="Adel Smati"
+      >ADEL SMATI</h1>
+
+      <h2 class="hero-h2" id="hero-h2">Pentest &amp; SOC</h2>
+
+      <p class="hero-bio" id="hero-bio">
+        Étudiant à l'École 42, je combine une maîtrise du bas niveau système (C/C++, Unix, mémoire) avec une pratique active de la cybersécurité offensive — CTF sur TryHackMe et Root-Me, exploitation de vulnérabilités Web et système (SQLi, XSS, SSRF, Buffer Overflow), veille CVE quotidienne. Mes projets 42 (WebServ, ft_irc, Minishell) m'ont confronté aux mécaniques réseau et système que j'apprends aujourd'hui à attaquer. Je recherche un stage Pentest ou SOC de 6 mois à partir de mai 2026 pour transformer cette base technique en expertise terrain.
+      </p>
+
+      <div class="hero-actions" id="hero-actions">
+        <a
+          href="https://github.com/adel-smati"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+          aria-label="Voir le profil GitHub d'Adel Smati"
+        >GitHub ↗</a>
+        <a
+          href="https://linkedin.com/in/adel-smati-23492337a"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+          aria-label="Voir le profil LinkedIn d'Adel Smati"
+        >LinkedIn ↗</a>
+        <a
+          href="./cv-adel-smati.pdf"
+          class="btn btn-ghost"
+          aria-label="Télécharger le CV d'Adel Smati"
+          download
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          CV PDF
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STACK TECHNIQUE ===== -->
+  <section id="stack" aria-labelledby="stack-title">
+    <div class="container">
+      <span class="section-label">02. stack technique</span>
+      <h2 class="section-title" id="stack-title">Outils &amp; langages</h2>
+
+      <div class="reveal-stagger" id="profil">
+
+        <div class="skills-group">
+          <p class="skills-category">Langages</p>
+          <div class="badges-wrap">
+            <span class="badge">C</span>
+            <span class="badge">C++</span>
+            <span class="badge">Bash / Shell</span>
+            <span class="badge">Python</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-category">Système Unix</p>
+          <div class="badges-wrap">
+            <span class="badge">Processus</span>
+            <span class="badge">IPC</span>
+            <span class="badge">File descriptors</span>
+            <span class="badge">Droits Unix</span>
+            <span class="badge">CLI</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-category">Sécurité offensive</p>
+          <div class="badges-wrap">
+            <span class="badge">Buffer Overflow</span>
+            <span class="badge">Use-After-Free</span>
+            <span class="badge">SQLi</span>
+            <span class="badge">XSS</span>
+            <span class="badge">SSRF</span>
+            <span class="badge">Secure Coding</span>
+            <span class="badge">Code Review</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-category">Réseau</p>
+          <div class="badges-wrap">
+            <span class="badge">Modèle OSI</span>
+            <span class="badge">TCP/IP</span>
+            <span class="badge">Sockets</span>
+            <span class="badge">HTTP/1.1</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-category">Outils offensifs</p>
+          <div class="badges-wrap">
+            <span class="badge">Nmap</span>
+            <span class="badge">Burp Suite</span>
+            <span class="badge">Metasploit</span>
+            <span class="badge">Wireshark</span>
+            <span class="badge">GDB</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-category">Environnements</p>
+          <div class="badges-wrap">
+            <span class="badge">Linux / Unix</span>
+            <span class="badge">Git</span>
+            <span class="badge">Docker</span>
+            <span class="badge">WebSocket</span>
+          </div>
+        </div>
+
+        <div class="skills-group" style="margin-top: var(--space-16); padding-top: var(--space-32); border-top: 1px solid var(--border);">
+          <p class="skills-category">Langues</p>
+          <div class="badges-wrap">
+            <span class="badge">Français — natif</span>
+            <span class="badge">Anglais — courant</span>
+            <span class="badge">Arabe — courant</span>
+          </div>
+        </div>
+
+        <div class="skills-group">
+          <p class="skills-category">Atouts</p>
+          <div class="badges-wrap">
+            <span class="badge">Autonomie</span>
+            <span class="badge">Rigueur</span>
+            <span class="badge">Résilience</span>
+            <span class="badge">Curiosité</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJETS ÉCOLE 42 ===== -->
+  <section id="projets" aria-labelledby="projets-title">
+    <div class="container">
+      <span class="section-label">03. projets</span>
+      <h2 class="section-title" id="projets-title">Projets École 42</h2>
+
+      <div class="grid-2 reveal">
+
+        <article class="card">
+          <p class="card-number">01</p>
+          <div class="card-header">
+            <h3 class="card-title">ft_transcendence</h3>
+            <div class="tags">
+              <span class="tag">C++</span>
+              <span class="tag">Docker</span>
+              <span class="tag">WebSocket</span>
+            </div>
+          </div>
+          <p class="card-body">App web fullstack — Pong multijoueur temps réel, authentification OAuth, communication WebSocket, orchestrée sous Docker.</p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Angle sécurité</p>
+          <p class="card-security-text">Gestion de sessions OAuth et authentification — surface d'attaque Auth classique, tokens, CSRF</p>
+        </article>
+
+        <article class="card">
+          <p class="card-number">02</p>
+          <div class="card-header">
+            <h3 class="card-title">WebServ</h3>
+            <div class="tags">
+              <span class="tag">C++</span>
+              <span class="tag">HTTP</span>
+              <span class="tag">Réseau</span>
+            </div>
+          </div>
+          <p class="card-body">Serveur HTTP/1.1 écrit from scratch — sockets non-bloquants, I/O multiplexing (select/poll), GET/POST/DELETE.</p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Angle sécurité</p>
+          <p class="card-security-text">Reconstruire HTTP/1.1 révèle chaque vecteur d'attaque lié aux mauvaises implémentations — path traversal, header injection</p>
+        </article>
+
+        <article class="card">
+          <p class="card-number">03</p>
+          <div class="card-header">
+            <h3 class="card-title">ft_irc</h3>
+            <div class="tags">
+              <span class="tag">C++</span>
+              <span class="tag">TCP</span>
+              <span class="tag">RFC 1459</span>
+            </div>
+          </div>
+          <p class="card-body">Serveur IRC en C++ respectant la RFC 1459 — gestion multi-clients, canaux, opérateurs, sockets TCP persistants.</p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Angle sécurité</p>
+          <p class="card-security-text">Parsing de commandes réseau brutes — base des injections de protocole et validation d'entrées non sanitisées</p>
+        </article>
+
+        <article class="card">
+          <p class="card-number">04</p>
+          <div class="card-header">
+            <h3 class="card-title">Minishell</h3>
+            <div class="tags">
+              <span class="tag">C</span>
+              <span class="tag">Unix</span>
+              <span class="tag">Système</span>
+            </div>
+          </div>
+          <p class="card-body">Shell UNIX complet en C — parsing lexical, exécution de built-ins, pipes, redirections I/O, gestion des signaux.</p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Angle sécurité</p>
+          <p class="card-security-text">Manipulation de descripteurs et signaux — fondement des techniques d'exploitation bas niveau</p>
+        </article>
+
+        <article class="card">
+          <p class="card-number">05</p>
+          <div class="card-header">
+            <h3 class="card-title">Philosophers</h3>
+            <div class="tags">
+              <span class="tag">C</span>
+              <span class="tag">Threads</span>
+              <span class="tag">Mutex</span>
+            </div>
+          </div>
+          <p class="card-body">Multithreading strict en C — mutex, synchronisation précise, prévention des deadlocks et race conditions.</p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Angle sécurité</p>
+          <p class="card-security-text">Race conditions en conditions réelles — vulnérabilité de concurrence fondamentale (TOCTOU, data races)</p>
+        </article>
+
+        <article class="card">
+          <p class="card-number">06</p>
+          <div class="card-header">
+            <h3 class="card-title">cub3D</h3>
+            <div class="tags">
+              <span class="tag">C</span>
+              <span class="tag">Raycasting</span>
+              <span class="tag">Mémoire</span>
+            </div>
+          </div>
+          <p class="card-body">Moteur 3D en C par raycasting inspiré de Wolfenstein — maths vectorielles, rendu temps réel, gestion mémoire graphique.</p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Angle sécurité</p>
+          <p class="card-security-text">Gestion mémoire bas niveau intensive — surface d'attaque classique en C (overflows, heap corruptions)</p>
+        </article>
+
+      </div>
+
+      <p class="extra-projects">
+        <strong>Autres projets validés —</strong>
+        Libft · ft_printf · get_next_line · Born2beRoot · Pipex · push_swap · Modules C++ (00→09) — tous validés
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== PROJETS PERSO ===== -->
+  <section id="perso" aria-labelledby="perso-title">
+    <div class="container">
+      <span class="section-label">04. projets perso</span>
+      <h2 class="section-title" id="perso-title">Initiatives &amp; Projets personnels</h2>
+
+      <div class="grid-3 reveal">
+
+        <article class="card">
+          <div class="card-header" style="margin-bottom: var(--space-8);">
+            <div>
+              <p class="card-number">Fondateur &amp; Gérant</p>
+              <h3 class="card-title">Elora Parfums</h3>
+            </div>
+            <div class="tags">
+              <span class="tag">E-commerce</span>
+            </div>
+          </div>
+          <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-bottom: var(--space-16);">2023 — 2025</p>
+          <p class="card-body">
+            Lancement et développement d'une marque de parfums en ligne de A à Z — sourcing fournisseurs, logistique, site e-commerce. Plus de <strong style="color: var(--text-primary);">1 000 commandes</strong> traitées, gestion complète de la relation client et des retours.
+          </p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Compétences mobilisées</p>
+          <p class="card-security-text">Autonomie totale, gestion de projet, relation client, opérations e-commerce — mis en pause pour se concentrer sur 42 et la cybersécurité</p>
+        </article>
+
+        <article class="card">
+          <div class="card-header" style="margin-bottom: var(--space-8);">
+            <div>
+              <p class="card-number">Fondateur</p>
+              <h3 class="card-title">Propfirm — Fintech</h3>
+            </div>
+            <div class="tags">
+              <span class="tag">Fintech</span>
+              <span class="tag">En cours</span>
+            </div>
+          </div>
+          <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-bottom: var(--space-16);">2025 — Présent</p>
+          <p class="card-body">
+            Structure fintech permettant à des traders indépendants d'opérer sur des fonds alloués. Conception des règles de gestion du risque : drawdown max, ratio R/R, critères de performance.
+          </p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Compétences mobilisées</p>
+          <p class="card-security-text">Modélisation du risque, structuration juridique, analyse financière — mené en parallèle du stage recherché</p>
+        </article>
+
+        <article class="card">
+          <div class="card-header" style="margin-bottom: var(--space-8);">
+            <div>
+              <p class="card-number">Freelance</p>
+              <h3 class="card-title">Technicien Informatique</h3>
+            </div>
+            <div class="tags">
+              <span class="tag">Paris</span>
+              <span class="tag">IT</span>
+            </div>
+          </div>
+          <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-bottom: var(--space-16);">Ponctuel</p>
+          <p class="card-body">
+            Dépannage matériel et logiciel (Linux, Windows) auprès de particuliers. Configuration sécurisée de routeurs et réseaux Wi-Fi. Sensibilisation aux bonnes pratiques de sécurité (phishing, sauvegardes).
+          </p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Compétences mobilisées</p>
+          <p class="card-security-text">Hardening réseau, diagnostic système, vulgarisation sécurité — premier contact terrain avec la sécurité informatique réelle</p>
+        </article>
+
+        <article class="card">
+          <div class="card-header" style="margin-bottom: var(--space-8);">
+            <div>
+              <p class="card-number">Fondateur</p>
+              <h3 class="card-title">ADL AUTO</h3>
+            </div>
+            <div class="tags">
+              <span class="tag">Automobile</span>
+              <span class="tag">Commerce</span>
+            </div>
+          </div>
+          <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-bottom: var(--space-16);">2025 — Présent</p>
+          <p class="card-body">
+            Création et développement d'une entreprise d'achat-revente de véhicules — sourcing, inspection technique, négociation, gestion administrative et revente.
+          </p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Compétences mobilisées</p>
+          <p class="card-security-text">Négociation commerciale, évaluation technique de véhicules, gestion administrative — sens aigu du rapport qualité/prix</p>
+        </article>
+
+        <article class="card">
+          <div class="card-header" style="margin-bottom: var(--space-8);">
+            <div>
+              <p class="card-number">En cours</p>
+              <h3 class="card-title">Recherche de stage</h3>
+            </div>
+            <div class="tags">
+              <span class="tag">Pentest</span>
+              <span class="tag">SOC</span>
+            </div>
+          </div>
+          <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-bottom: var(--space-16);">Mai 2026 — ···</p>
+          <p class="card-body">
+            À la recherche d'un stage de 6 mois en cybersécurité (Pentest / SOC) dès mai 2026 — Paris et région parisienne. Ouvert aux opportunités à distance.
+          </p>
+          <div class="card-separator"></div>
+          <p class="card-security-label">Contact</p>
+          <p class="card-security-text">adel.smati@gmail.com · linkedin.com/in/adel-smati-23492337a</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTF & WRITE-UPS ===== -->
+  <section id="ctf" aria-labelledby="ctf-title">
+    <div class="container">
+      <span class="section-label">05. ctf &amp; write-ups</span>
+      <h2 class="section-title" id="ctf-title">CTF &amp; Write-ups</h2>
+
+      <div class="grid-3 reveal">
+
+        <article class="card writeup-card" data-category="Web">
+          <p class="platform-tag">TryHackMe · Web</p>
+          <div class="card-header">
+            <h3 class="card-title">SQL Injection — Auth Bypass</h3>
+            <span class="diff diff-easy">EASY</span>
+          </div>
+          <p class="card-body">
+            Formulaire de login vulnérable à une injection SQL classique.
+            Exploitation via <code>' OR 1=1 --</code> pour bypasser l'auth et accéder au panel admin.
+            Credentials extraits par UNION SELECT. Outil : Burp Suite.
+          </p>
+          <a href="#" class="writeup-link" aria-label="Lire le write-up SQL Injection">→ Lire le write-up complet</a>
+        </article>
+
+        <article class="card writeup-card" data-category="Pwn">
+          <p class="platform-tag">Root-Me · Pwn</p>
+          <div class="card-header">
+            <h3 class="card-title">Buffer Overflow — Ret2Libc</h3>
+            <span class="diff diff-hard">HARD</span>
+          </div>
+          <p class="card-body">
+            Binaire ELF 32-bit sans ASLR, NX activé.
+            Offset identifié via pattern cyclique dans GDB/pwndbg.
+            Payload ret2libc pour chaîner <code>system()</code> + <code>/bin/sh</code>. Shell obtenu.
+          </p>
+          <a href="#" class="writeup-link" aria-label="Lire le write-up Buffer Overflow">→ Lire le write-up complet</a>
+        </article>
+
+        <article class="card writeup-card" data-category="Réseau">
+          <p class="platform-tag">TryHackMe · Réseau</p>
+          <div class="card-header">
+            <h3 class="card-title">HTTP Traffic — Credential Sniffing</h3>
+            <span class="diff diff-easy">EASY</span>
+          </div>
+          <p class="card-body">
+            Analyse d'un fichier <code>.pcap</code> contenant des échanges HTTP non chiffrés.
+            Extraction des credentials en clair via filtre Wireshark <code>http.request.method == POST</code>.
+          </p>
+          <a href="#" class="writeup-link" aria-label="Lire le write-up réseau">→ Lire le write-up complet</a>
+        </article>
+
+      </div>
+
+      <!-- WRITEUP_INSERT -->
+
+      <div style="text-align:center; margin-top: 32px;">
+        <a href="./writeups/" class="btn btn-ghost" aria-label="Voir tous les write-ups CTF">Voir tous les write-ups →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section id="certifications" aria-labelledby="cert-title">
+    <div class="container">
+      <span class="section-label">06. certifications</span>
+      <h2 class="section-title" id="cert-title">Certifications</h2>
+
+      <div class="cert-list reveal-stagger">
+
+        <div class="cert-item">
+          <div class="status-dot in-progress" aria-label="En cours" title="En cours"></div>
+          <span class="cert-name">Google Cybersecurity Certificate</span>
+          <span class="cert-org">Google / Coursera</span>
+          <span class="cert-status">EN COURS</span>
+        </div>
+
+        <div class="cert-item">
+          <div class="status-dot in-progress" aria-label="En cours" title="En cours"></div>
+          <span class="cert-name">CC — Certified in Cybersecurity</span>
+          <span class="cert-org">ISC²</span>
+          <span class="cert-status">EN COURS · JUIN 2026</span>
+        </div>
+
+        <div class="cert-item">
+          <div class="status-dot active" aria-label="Actif" title="Actif"></div>
+          <span class="cert-name">TryHackMe Learning Paths</span>
+          <span class="cert-org">TryHackMe</span>
+          <span class="cert-status">ACTIF — Pre-Security · Jr Pentest · SOC L1</span>
+        </div>
+
+        <div class="cert-item">
+          <div class="status-dot in-progress" aria-label="En cours" title="En cours"></div>
+          <span class="cert-name">NDG Linux Essentials</span>
+          <span class="cert-org">Cisco Networking Academy</span>
+          <span class="cert-status">EN COURS</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VEILLE CVE ===== -->
+  <section id="veille" aria-labelledby="veille-title">
+    <div class="container">
+      <span class="section-label">07. veille cve</span>
+      <h2 class="section-title" id="veille-title">Veille CVE</h2>
+
+      <div class="grid-2 reveal">
+
+        <div class="cve-card">
+          <div class="cve-meta">
+            <span class="cve-id">CVE-2024-6387</span>
+            <span class="cvss cvss-high">CVSS 8.1</span>
+            <span class="cve-date">2024-07-01</span>
+          </div>
+          <p class="cve-title">OpenSSH — regreSSHion, Race Condition pre-auth RCE</p>
+          <p class="cve-body">
+            Race condition dans le handler SIGALRM de sshd sur les systèmes Linux glibc.
+            La vulnérabilité est déclenchée par l'appel de fonctions non-async-signal-safe depuis un signal handler.
+            Elle permet une exécution de code à distance non authentifiée, exploitation difficile mais démontrée.
+            Impact massif vu l'ubiquité d'OpenSSH. En pentest, pertinent pour les cibles Linux exposant SSH non patché.
+            Patch : OpenSSH ≥ 9.8p1.
+          </p>
+        </div>
+
+        <div class="cve-card">
+          <div class="cve-meta">
+            <span class="cve-id">CVE-2024-3400</span>
+            <span class="cvss cvss-critical">CVSS 10.0</span>
+            <span class="cve-date">2024-04-12</span>
+          </div>
+          <p class="cve-title">PAN-OS — Command Injection pre-auth RCE (GlobalProtect)</p>
+          <p class="cve-body">
+            Injection de commandes OS dans la fonctionnalité GlobalProtect de Palo Alto PAN-OS.
+            Exploitable sans authentification via une requête HTTP malformée ciblant le daemon GPGW.
+            Mène à une exécution arbitraire en root sur le firewall.
+            Exploitée activement dans la nature (APT UTA0218) pour déployer des backdoors.
+            CVE critique pour les équipes SOC : indicateurs de compromission documentés par Volexity.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- VEILLE_INSERT -->
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 class="contact-title" id="contact-title">Travaillons ensemble</h2>
+      <p class="contact-sub">
+        Disponible pour un stage Pentest / SOC de 6 mois · Paris · Dès mai 2026
+      </p>
+      <a href="mailto:adel.smati@gmail.com" class="contact-email" aria-label="Envoyer un email à Adel Smati">
+        adel.smati@gmail.com
+      </a>
+      <div class="contact-actions">
+        <a
+          href="https://linkedin.com/in/adel-smati-23492337a"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+          aria-label="LinkedIn Adel Smati"
+        >LinkedIn ↗</a>
+        <a
+          href="https://github.com/adel-smati"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost"
+          aria-label="GitHub Adel Smati"
+        >GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>Adel Smati · 2026</p>
+      <p>Fait avec du C, de la curiosité et quelques CVE</p>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="assets/js/particles.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/13 11:36:59 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/29 22:58:48 by asmati           ###   ########.fr       */
+/*   Created: 2026/03/21 21:46:16 by asmati            #+#    #+#             */
+/*   Updated: 2026/03/28 16:13:53 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
+#include "WrongCat.hpp"
+#include "WrongCat.hpp"
 
-int main(int ac,char **av)
-{
-	if(ac >= 2)
-	{	
-		for(int i = 1;i < ac; i++){
-			for(int j = 0 ; av[i][j]; j++){
-					std::cout << (char)std::toupper(av[i][j]);
-			}
-		}
-		std::cout << std::endl;
-	}
-	else
-		std::cout <<  "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	return (1);	
+WrongCat::WrongCat() : WrongAnimal(){
+    type = "WrongCat";
+    std::cout << "WrongCat constructor called" << std::endl;
 }
+
+WrongCat::~WrongCat() {
+    std::cout << "WrongCat destructor called" << std::endl;
+}
+
+void WrongCat::makeSound() const {
+    std::cout << "MeoOOOow" << std::endl;
+}
+

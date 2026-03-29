@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 10:58:01 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/28 20:30:33 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/29 23:39:41 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 int main(void)
 {
-	randomChump("Sal");
+	randomChump("Zombie 1");
 	
-	Zombie* newZB = newZombie("line");
+	Zombie* newZB = newZombie("Zombie 2");
 	newZB->announce();
 	delete newZB;
 	return 0;
