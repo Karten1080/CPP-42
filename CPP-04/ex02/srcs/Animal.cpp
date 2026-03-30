@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/21 21:46:16 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/29 17:03:22 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/30 15:05:07 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ Animal::~Animal() {
     std::cout << "Animal destructor called" << std::endl;
 }
 
-void Animal::makeSound() const {
-    std::cout << "Animal makes a sound" << std::endl;
-}
+// void Animal::makeSound() const {
+//     std::cout << "Animal makes a sound" << std::endl;
+// }
 
 std::string Animal::getType()  const{
     std::cout << type << ": ";

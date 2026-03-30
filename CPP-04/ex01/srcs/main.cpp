@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:00:24 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/29 23:09:11 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/30 15:01:37 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,7 @@ int main()
 {
     std::cout << "--- Creation ---" << std::endl;
     int Animals = 10;
-     Animal* Zoo[Animals];
-    
+    Animal* Zoo[Animals];
     for(int i = 0; i < Animals;i++)
     {
         if(i < (Animals / 2))

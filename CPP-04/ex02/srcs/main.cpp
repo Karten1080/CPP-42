@@ -6,7 +6,7 @@
 /*   By: asmati <asmati@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/18 11:00:24 by asmati            #+#    #+#             */
-/*   Updated: 2026/03/29 23:09:11 by asmati           ###   ########.fr       */
+/*   Updated: 2026/03/30 15:15:00 by asmati           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@ int main()
 {
     std::cout << "--- Creation ---" << std::endl;
     int Animals = 10;
-     Animal* Zoo[Animals];
-    
+    Animal* Zoo[Animals];
+    // Animal  test;           // ❌ ERREUR : Type abstrait
+    // Animal* ptr = new Animal(); // ❌ ERREUR : Type abstrait
+    // Animal* chat = new Cat(); // ✅ OK : On crée un vrai chat
+    // chat->makeSound();        // ✅ OK : Appelle le miaou du chat
+    // delete c hat;              // ✅ OK
     for(int i = 0; i < Animals;i++)
     {
         if(i < (Animals / 2))
@@ -50,7 +54,7 @@ int main()
     else
         std::cout << "❌ ÉCHEC : C'est une Shallow Copy (cerveau partagé) !" << std::endl;
 
-    std::cout << "\n--- TEST DEEP COPY (AFFECTATION) ---" << std::endl;
+    std::cout << std::endl << "--- TEST DEEP COPY (AFFECTATION) ---" << std::endl;
     Cat cat1;
     Cat cat2;
     cat1.getBrain()->setIdea(0, "Manger du thon");
@@ -61,6 +65,7 @@ int main()
     std::cout << "Cat1 idée 0 : " << cat1.getBrain()->getIdea(0) << std::endl;
     std::cout << "Cat2 idée 0 : " << cat2.getBrain()->getIdea(0) << std::endl;
 
-    
+    std::cout <<  "\n--- END ---" << std::endl << std::endl;
+
     return 0;
 }
